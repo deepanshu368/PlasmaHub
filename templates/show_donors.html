@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/show_donors.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Show Donors</title>
+</head>
+
+
+<body>
+    <div class="bg-container">
+        <div class="header d-flex flex-row justify content-end">
+            <button class="bt-header1">COVID-19 Helpline No. 011-46300000</button>
+            <p class="txt">|</p>
+            <a href="/accounts/login"><button class="bt-header">Login</button></a>
+        </div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <a class="header-text1 navbar-brand" href="/">Plasma Donors</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="header-text2 nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="header-text2 nav-link" href="/">Abstract</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="header-text2 nav-link" href="/">Register</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="header-text2 nav-link" href="/">Eligibility</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="header-text2 nav-link" href="#section-contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="table-container">
+            <table>
+                <tr class="table-elements1">
+                    <td>Firstname</td>
+                    <td>Lastname</td>
+                    <td>Adhaar Number</td>
+                    <td>Email</td>
+                    <td>Age</td>
+                    <td>Sex</td>
+                    <td>District</td>
+                    <td>Pin code</td>
+                    <td>Mobile Number</td>
+                    <td>Blood Group</td>
+                    <td>Weight(in kgs)</td>
+                    <td>Are you Diabetic?</td>
+                    <td>Having Any Chronic disease</td>
+
+                </tr>
+
+                {% for don in donors %}
+                <tr class="table-elements2">
+                    <td>{{don.first_name}}</td>
+                    <td>{{don.last_name}}</td>
+                    <td>{{don.adhar_no}}</td>
+                    <td>{{don.email}}</td>
+                    <td>{{don.age}}</td>
+                    <td>{{don.sex}}</td>
+                    <td>{{don.district}}</td>
+                    <td>{{don.pin}}</td>
+                    <td>{{don.mob}}</td>
+                    <td>{{don.blood_grp}}</td>
+                    <td>{{don.weight}}</td>
+                    <td>{{don.diabetic}}</td>
+                    <td>{{don.disease}}</td>
+                </tr>
+
+                {% endfor %}
+            </table>
+
+
+        </div>
+        <div class="footer d-flex flex-row" id="section-contact">
+            <div>
+                <h1 class="footer-heading">Contact Us</h1>
+                <p class="footer-text">Team SSD</p>
+                <p class="footer-text">Members :</p>
+                <ul class="list-un">
+                    <li class="footer-text">Shobhit Rajput</li>
+                    <li class="footer-text">Shardul Semwal</li>
+                    <li class="footer-text">Deepanshu Kumar Gupta</li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="footer-heading">Quick Links</h1>
+                <a href="/">
+                    <p class="footer-text">Home</p>
+                </a>
+                <a href="/">
+                    <p class="footer-text">Abstract</p>
+                </a>
+                <a href="/">
+                    <p class="footer-text">Eligibility</p>
+                </a>
+            </div>
+            <div>
+                <h1 class="footer-heading f1">Quick Message</h1>
+                <p class="footer-text">To leave a query or to submit a feedback</p>
+                <a href="https://forms.gle/iFqaEpAe4rCUDLMc6"><button class="btton">Click Here</button></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
