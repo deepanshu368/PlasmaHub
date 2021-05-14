@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'donate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'donate',
-        'USER':'postgres',
-        'PASSWORD':'#tag12345',
+        'NAME': 'data base name',
+        'USER':'user name of database ',
+        'PASSWORD':'write your database passowrd',
         'HOST':'localhost'
     }
 }
@@ -129,9 +129,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'dg6815806@gmail.com'
-EMAIL_HOST_PASSWORD = 'T3@gbkab'
-
+EMAIL_HOST_USER = 'your email'
+EMAIL_HOST_PASSWORD = 'email password'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
